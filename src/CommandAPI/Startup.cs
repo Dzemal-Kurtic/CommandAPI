@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
+using AutoMapper;
 
 namespace CommandAPI
 {
@@ -34,6 +35,7 @@ namespace CommandAPI
             services.AddControllers();
             services.AddDbContext<CommandContext>(opt => opt.UseNpgsql(builder.ConnectionString));
             services.AddScoped<ICommandAPIRepo, SqlCommandAPIRepo>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
