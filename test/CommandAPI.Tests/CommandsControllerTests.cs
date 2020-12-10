@@ -48,7 +48,7 @@ namespace CommandAPI.Tests
             var result = controller.GetAllCommands();
 
             //Assert
-            Assert.IsType<NotFoundResult>(result.Result);
+            Assert.IsType<OkObjectResult>(result.Result);
         }
 
         [Fact]
